@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SelectedBookService {
-  public book = new Subject<any>();
+  private book = new BehaviorSubject<any>(undefined);
 
   constructor() {}
 
   setBook(value: any) {
     this.book.next(value);
+  }
+
+  getBook(): Observable<any> {
+    return this.book.asObservable();
   }
 }

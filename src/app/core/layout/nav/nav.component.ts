@@ -1,6 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
-import * as EventEmitter from 'events';
-import { SelectedBook } from 'src/app/shared/class-comunication/selectedBook';
+import { Component, OnInit } from '@angular/core';
 import { Books } from 'src/app/shared/utils/books';
 import { SelectedBookService } from '../../services/selectedBook/selected-book.service';
 
