@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
     this.book = null;
     this.selectedBookService.getBook().subscribe((book) => {
       this.book = book;
-      console.log(this.book);
     });
   }
 }

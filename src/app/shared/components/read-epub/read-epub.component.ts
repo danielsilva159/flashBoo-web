@@ -23,6 +23,10 @@ export class ReadEpubComponent implements OnChanges {
   }
 
   readyEpub(url: string): void {
+    let area = document.getElementById('area');
+    if (area) {
+      area.innerHTML = '';
+    }
     const book = ePub(url);
     this.rendition = book.renderTo('area', { width: '100%', height: '500px' });
     this.rendition.display();

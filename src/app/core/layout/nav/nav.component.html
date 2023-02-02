@@ -1,5 +1,5 @@
 <section>
   <span *ngFor="let book of books" (click)="sendBook(book)">
-    <img src="{{book.image}}">
+    <img [src]="book.image">
   </span>
 </section>
