@@ -11,8 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(private selectedBookService: SelectedBookService) {}
 
   ngOnInit(): void {
+    this.book = null;
     this.selectedBookService.getBook().subscribe((book) => {
       this.book = book;
+      console.log(this.book);
     });
   }
 }

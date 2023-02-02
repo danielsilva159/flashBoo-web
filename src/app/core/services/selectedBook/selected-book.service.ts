@@ -11,6 +11,7 @@ export class SelectedBookService {
 
   setBook(value: any) {
     this.book.next(value);
+    console.log(this.book);
   }
 
   getBook(): Observable<any> {
