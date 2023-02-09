@@ -46,7 +46,6 @@ export class ReadEpubComponent implements OnChanges {
     });
     this.rendition.on('rendered', (section: any) => {
       console.log('########### section ', section);
-      console.log(book);
     });
 
     this.rendition.on('selected', (select: any) => {
@@ -55,11 +54,16 @@ export class ReadEpubComponent implements OnChanges {
     this.rendition.on('relocated', (location: any) => {
       console.log(location);
     });
+    book.ready
+      .then((b) => {
+        return b;
+      })
+      .then((c) => {
+        console.log(c);
+      });
   }
 
   nextPage(): void {
-    console.log(this.rendition);
-
     this.rendition.next();
   }
 

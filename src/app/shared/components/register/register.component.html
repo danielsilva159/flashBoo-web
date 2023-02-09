@@ -1,0 +1,21 @@
+<main>
+  <section class="register">
+    <form method="post" class="form" [formGroup]="registerForm" (ngSubmit)="submit()">
+      <section>
+        <label for="name" >Nome</label>
+        <input type="text" id="name" formControlName="name" required >
+      </section>
+      <section>
+        <label for="email" >Email</label>
+        <input type="text" id="email" formControlName="email" required>
+      </section>
+      <section>
+        <label for="password">Senha</label>
+        <input type="password" id="password" formControlName="password" required >
+      </section>
+      <section>
+        <button [disabled]="!registerForm.valid" type="submit">Registre-se</button>
+      </section>
+    </form>
+  </section>
+</main>

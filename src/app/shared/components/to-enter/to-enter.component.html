@@ -1,0 +1,30 @@
+<main class="login">
+  <section class="login-social" *ngIf="!logarEmail">
+    <button class="facebook"><img class="icon" src="../../../../assets/icons/facebook.svg" alt=""><span>Login com o Facebook</span></button>
+    <button class="google"><img class="icon" src="../../../../assets/icons/google.svg" alt=""><span>Login com o Google+</span></button>
+  </section>
+  <section class="login-email" *ngIf="!logarEmail">
+    <span>ou</span>
+    <button (click)="buttonLogarEmail()">Login com email</button>
+  </section>
+  <section class="login-email-campos" *ngIf="logarEmail">
+    <form class="form" autocomplete="off">
+      <section>
+        <label for="email">Email</label>
+        <input type="text" id="email">
+      </section>
+      <section>
+        <label for="password">Senha</label>
+        <input type="password" id="password"  >
+      </section>
+      <section>
+        <a href="#" >Esqueceu a senha?</a>
+      </section>
+      <section>
+        <button>Fazer login</button>
+      </section>
+    </form>
+  </section>
+</main>
+
+

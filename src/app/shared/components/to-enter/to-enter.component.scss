@@ -1,0 +1,85 @@
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .login-social {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    button {
+      width: 300px;
+      height: 40px;
+      border: none;
+      color: #fff;
+      margin: 5px 0px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      &.facebook {
+        background-color: #4e69a2;
+
+        .icon {
+          width: 24px;
+        }
+      }
+      &.google {
+        background-color: #5490f5;
+
+        .icon {
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  .login-email {
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      padding-top: 10px;
+    }
+    button {
+      width: 300px;
+      height: 40px;
+      background-color: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  }
+
+  .login-email-campos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    form {
+      section {
+        display: flex;
+        flex-direction: column;
+        width: 258px;
+        margin-bottom: 20px;
+        label {
+          color: #757575;
+        }
+        input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid #000;
+        }
+        button {
+          padding: 10px 0;
+          background-color: #170df2;
+          color: #fff;
+          border: none;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
