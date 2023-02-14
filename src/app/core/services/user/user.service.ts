@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  path = '/api/v1/login';
+  path = '/api/v1/user';
   constructor(private http: HttpClient) {}
 
   createUser(body: any) {

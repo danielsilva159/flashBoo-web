@@ -37,19 +37,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    this.notifier.show({
-      type: 'success',
-      message: 'Usuário cadastrado com sucesso',
+    this.userService.createUser(this.registerForm.value).subscribe({
+      next: (user) => {
+        this.registerForm.reset();
+        this.respostaSuccess.emit('entrar');
+        this.notifier.show({
+          type: 'success',
+          message: 'Usuário cadastrado com sucesso',
+        });
+      },
+      error: (err) => {
+        console.log(err);
+        this.notifier.show({ type: 'error', message: err.error.message });
+      },
     });
-    // this.userService.createUser(this.registerForm.value).subscribe({
-    //   next: (user) => {
-    //     // this.registerForm.reset();
-    //     // this.respostaSuccess.emit('Entrar');
-    //   },
-    //   error: (err) => {
-    //     console.log(err);
-    //   },
-    // });
     console.log(this.registerForm.value);
   }
 }
