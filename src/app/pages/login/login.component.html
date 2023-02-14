@@ -1,8 +1,8 @@
 <main>
-  <section class="login-header">
-    <h1>Login</h1>
-    <h3>Novo no flashBoo? <a href="#">clique aqui</a></h3>
+  <section class="action">
+    <a id="cadastrar" (click)="action('cadastrar')" [ngClass]="{active: option==='cadastrar'}">Cadastre-se</a>
+    <a id="entrar" (click)="action('entrar')" [ngClass]="{active: option==='entrar'}">Entrar</a>
   </section>
-  <app-to-enter *ngIf="false"></app-to-enter>
-  <app-register ></app-register>
+  <app-to-enter *ngIf="option==='entrar'" ></app-to-enter>
+  <app-register *ngIf="option=== 'cadastrar'" (respostaSuccess)="action($event)"></app-register>
 </main>

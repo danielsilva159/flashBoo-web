@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-enter.component.scss'],
 })
 export class ToEnterComponent implements OnInit {
-  logarEmail = false;
   constructor() {}
 
   ngOnInit(): void {}
-
-  buttonLogarEmail() {
-    this.logarEmail = true;
-  }
 }
