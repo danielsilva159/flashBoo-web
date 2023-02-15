@@ -1,17 +1,17 @@
 <main class="login">
   <section class="login-email-campos">
-    <form class="form" autocomplete="off">
+    <form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="logar()">
       <section>
-        <input type="text" id="email" placeholder="E-mail">
+        <input type="text" id="email" placeholder="E-mail" required formControlName="email">
       </section>
       <section>
-        <input type="password" id="password"  placeholder="Senha">
+        <input type="password" id="password"  placeholder="Senha" formControlName="password" required>
       </section>
       <section>
         <a href="#" >Esqueceu a senha?</a>
       </section>
       <section>
-        <button>Fazer login</button>
+        <button type="submit" [disabled]="!form.valid">Fazer login</button>
       </section>
     </form>
   </section>

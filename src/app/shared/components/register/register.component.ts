@@ -47,10 +47,8 @@ export class RegisterComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log(err);
         this.notifier.show({ type: 'error', message: err.error.message });
       },
     });
-    console.log(this.registerForm.value);
   }
 }
