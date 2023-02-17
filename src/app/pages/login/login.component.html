@@ -1,12 +1,24 @@
 <notifier-container></notifier-container>
 <main>
-  <section class="login-header">
-    <h1>Bem vindo ao Sistema <span>Flashboo</span></h1>
+  <section class="login">
+    <section class="login-header">
+      <h1>Bem vindo ao Sistema <span>Flashboo</span></h1>
+    </section>
+    <section class="action">
+      <a id="cadastrar" (click)="action('cadastrar')" [ngClass]="{active: option==='cadastrar'}">Cadastre-se</a>
+      <a id="entrar" (click)="action('entrar')" [ngClass]="{active: option==='entrar'}">Entrar</a>
+    </section>
+    <section class="components">
+      <app-to-enter *ngIf="option==='entrar'" ></app-to-enter>
+      <app-register *ngIf="option=== 'cadastrar'" (respostaSuccess)="action($event)"></app-register>
+    </section>
+    <section class="login-social">
+      <span>Acesso rapido com</span>
+      <section class="icon-social">
+      <button><img src="../../../assets/icons/google.svg" alt="acessar com google"></button>
+      <button><img src="../../../assets/icons/facebook2.svg" alt="acessar com facebook"></button>
+    </section>
   </section>
-  <section class="action">
-    <a id="cadastrar" (click)="action('cadastrar')" [ngClass]="{active: option==='cadastrar'}">Cadastre-se</a>
-    <a id="entrar" (click)="action('entrar')" [ngClass]="{active: option==='entrar'}">Entrar</a>
   </section>
-  <app-to-enter *ngIf="option==='entrar'" ></app-to-enter>
-  <app-register *ngIf="option=== 'cadastrar'" (respostaSuccess)="action($event)"></app-register>
+
 </main>
