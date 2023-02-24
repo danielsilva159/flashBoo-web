@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './leitor/home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { CoreModule } from '../core/core.module';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { ReaderComponent } from './reader/reader.component';
+import { HomeComponent } from './home/home.component';
 
 /**
  * Custom angular notifier options
@@ -51,7 +52,7 @@ const customNotifierOptions: NotifierOptions = {
 };
 
 @NgModule({
-  declarations: [HomeComponent, LoginComponent],
+  declarations: [HomeComponent, LoginComponent, ReaderComponent],
   imports: [
     CommonModule,
     SharedModule,
