@@ -15,7 +15,7 @@ import Rendition from 'epubjs/types/rendition';
   styleUrls: ['./read-epub.component.scss'],
 })
 export class ReadEpubComponent implements OnChanges {
-  @Input() urlEpub: string = '';
+  @Input() urlEpub = '';
   rendition!: Rendition;
 
   constructor() {}
@@ -72,12 +72,12 @@ export class ReadEpubComponent implements OnChanges {
   }
 
   config(book: Book, cfiRange: any) {
-    let highlights = document.getElementById('highlights');
+    const highlights = document.getElementById('highlights');
     book.getRange(cfiRange).then((range) => {
       let text;
-      let li = document.createElement('li');
-      let a = document.createElement('a');
-      let remove = document.createElement('a');
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      const remove = document.createElement('a');
       let textNode;
       console.log(range);
 
@@ -106,8 +106,8 @@ export class ReadEpubComponent implements OnChanges {
   }
 
   resetEpub() {
-    let area = document.getElementById('area');
-    let highlights = document.getElementById('highlights');
+    const area = document.getElementById('area');
+    const highlights = document.getElementById('highlights');
     if (area && highlights) {
       area.innerHTML = '';
       highlights.innerHTML = '';

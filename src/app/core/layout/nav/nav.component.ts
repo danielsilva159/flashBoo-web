@@ -15,7 +15,17 @@ export class NavComponent implements OnInit {
     console.log(this.books);
   }
 
-  sendBook(book: any) {
-    this.selectedBookService.setBook(book);
+  openNav() {
+    const nav = document.getElementById('mySidenav');
+    if (nav) {
+      nav.style.width = '250px';
+    }
+  }
+
+  closeNav() {
+    const nav = document.getElementById('mySidenav');
+    if (nav) {
+      nav.style.width = '0';
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -8,11 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MainLayoutComponent implements OnInit, OnChanges {
   logado = false;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.route.url);
+    this.authService.getLogado().subscribe((logado) => {
+      this.logado = logado;
+    });
   }
 
-  ngOnChanges() {}
+  ngOnChanges() {
+    console.log('changes');
+  }
 }

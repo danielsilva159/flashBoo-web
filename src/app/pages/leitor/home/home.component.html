@@ -1,4 +1,10 @@
-<app-nav></app-nav>
-<div *ngIf="book">
-  <app-read-epub [urlEpub]="book.path"></app-read-epub>
-</div>
+<section>
+  <section class="list-books">
+    <span *ngFor="let book of books" (click)="sendBook(book)">
+      <img [src]="book.image">
+    </span>
+  </section>
+  <section *ngIf="book">
+    <app-read-epub [urlEpub]="book.path"></app-read-epub>
+  </section>
+</section>

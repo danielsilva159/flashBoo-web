@@ -1,9 +1,12 @@
 <section class="container">
   <header *ngIf="logado">
     <app-header></app-header>
+    <app-nav></app-nav>
   </header>
   <main>
     <router-outlet></router-outlet>
   </main>
-  <app-footer *ngIf="logado"></app-footer>
+  <footer *ngIf="logado">
+    <app-footer ></app-footer>
+  </footer>
 </section>

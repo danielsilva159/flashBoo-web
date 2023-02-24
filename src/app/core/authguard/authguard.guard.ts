@@ -38,6 +38,9 @@ export class AuthguardGuard implements CanActivate {
 
   refleshToken() {
     this.auth.refresh()?.subscribe({
+      next: () => {
+        this.auth.setLogado(true);
+      },
       error: (err) => {
         console.log(err);
 
